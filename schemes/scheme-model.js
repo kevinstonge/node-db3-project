@@ -34,7 +34,7 @@ const add = async (schemeObject) => {
   }
 };
 
-const update = async (udateObject, id) => {
+const update = async (updateObject, id) => {
   try {
     const result = await db("schemes").update(updateObject).where({ id });
     return result;
