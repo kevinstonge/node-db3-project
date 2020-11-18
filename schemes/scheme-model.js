@@ -52,4 +52,13 @@ const remove = async (id) => {
   }
 };
 
-module.exports = { find, findById, findSteps, add, update, remove };
+const addStep = async (stepObject, id) => {
+  try {
+    const result = await db("steps").insert({ ...stepObject, scheme_id: id });
+    return result;
+  } catch (error) {
+    throw error;
+  }
+}
+
+module.exports = { find, findById, findSteps, add, update, remove, addStep };
